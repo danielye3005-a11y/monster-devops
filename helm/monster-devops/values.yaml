@@ -1,0 +1,12 @@
+replicaCount: 3
+
+image:
+  repository: ghcr.io/danielye3005-a11y/monster-devops-app
+  tag: latest
+
+service:
+  port: 80
+  targetPort: 5000
+
+ingress:
+  host: monster.local
