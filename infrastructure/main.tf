@@ -17,3 +17,15 @@ resource "kubernetes_namespace" "monster" {
     name = "monster-devops"
   }
 }
+
+resource "kubernetes_config_map" "monster_info" {
+  metadata {
+    name      = "monster-info"
+    namespace = kubernetes_namespace.monster.metadata[0].name
+  }
+
+  data = {
+    environment = "local"
+    project     = "monster-devops"
+  }
+}
