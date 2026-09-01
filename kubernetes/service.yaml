@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: monster-app-service
+
+spec:
+  selector:
+    app: monster-app
+
+  ports:
+    - port: 80
+      targetPort: 5000
+
+  type: ClusterIP
