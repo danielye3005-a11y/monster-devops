@@ -3,14 +3,16 @@ kind: Service
 
 metadata:
   name: monster-app-service
+  labels:
+    app: monster-app
 
 spec:
   selector:
     app: monster-app
 
   ports:
-    - port: {{ .Values.service.port }}
+    - name: http
+      port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.targetPort }}
 
   type: ClusterIP
-
